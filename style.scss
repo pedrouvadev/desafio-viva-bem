@@ -1,0 +1,674 @@
+/* ========================================
+   VARIÁVEIS GLOBAIS
+   ======================================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+$cor-primaria-blue: #1173d4;
+$cor-primaria-green: #33cc73;
+$cor-primaria-pink: #c75b9b;
+$cor-secundaria-blue: #3d4d8f;
+$cor-secundaria-teal: #4a7ba7;
+$cor-secundaria-green: #4fb38e;
+$cor-acento-pink: #e91e63;
+$cor-acento-red: #dc3545;
+$cor-light-pink: #fef5f9;
+$cor-light-blue: #f0f4ff;
+$cor-light-gray: #f8f9fa;
+$cor-branca: #ffffff;
+$cor-escura: #313360;
+$cor-texto-escuro: #000000;
+$cor-texto-claro: #555555;
+$cor-texto-mutado: #9eaabb;
+
+$font-primaria: 'Inter', sans-serif;
+$font-secundaria: 'Poppins', sans-serif;
+$font-body: 'Roboto', sans-serif;
+
+$spacing-xs: 8px;
+$spacing-sm: 15px;
+$spacing-md: 20px;
+$spacing-lg: 30px;
+$spacing-xl: 40px;
+$spacing-2xl: 60px;
+$spacing-3xl: 80px;
+
+$border-radius-sm: 8px;
+$border-radius-md: 10px;
+$border-radius-lg: 15px;
+$border-radius-full: 50%;
+
+$shadow-sm: 0 4px 10px rgba(0, 0, 0, 0.1);
+$shadow-md: 0 4px 15px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.15);
+
+$breakpoint-mobile: 480px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+$breakpoint-wide: 1200px;
+
+/* ========================================
+   RESET E CONFIGURAÇÕES GLOBAIS
+   ======================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: $font-body;
+    background: $cor-branca;
+    color: $cor-texto-escuro;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    margin: 0;
+}
+
+ul, li {
+    list-style: none;
+}
+
+/* ========================================
+   HEADER
+   ======================================== */
+
+header {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("./img/bannerHeader.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    .box-header {
+        margin-top: 30px;
+        width: 80%;
+        height: 10vh;
+        border-radius: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        background: linear-gradient(to right, #4247A2 0%, #52B095 100%);
+
+        nav {
+            width: 40%;
+            height: 10vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+
+            a {
+                color: #fff;
+                font-family: "Roboto", sans-serif;
+            }
+        }
+        .nav-links {
+        display: flex;
+        gap: $spacing-xl;
+        flex-wrap: wrap;
+
+        a {
+            color: $cor-branca;
+            text-decoration: none;
+            font-family: $font-secundaria;
+            font-size: 18px;
+            font-weight: 400;
+            transition: opacity 0.3s ease;
+
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+    }
+    
+    }
+}
+
+/* ========================================
+   HERO BANNER
+   ======================================== */
+
+.box-banner {
+    width: 80vw;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+
+    .box-titulo {
+        height: 60vh;
+        
+        h1 {
+            font-size: 2.7rem;
+            font-weight: bold;
+            background: linear-gradient(to right, #1173D4 0%, #33CC73 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+            font-family: $font-primaria;
+            line-height: 1.2;
+            margin-bottom: $spacing-md;
+        }
+        
+        p {
+        font-family: $font-body;
+        font-size: 20px;
+        color: #333333;
+        margin-bottom: $spacing-lg;
+        }
+        
+
+    }
+
+    /* ========================================
+    BOTÕES
+    ======================================== */
+        .botoes {
+        display: flex;
+        gap: $spacing-md;
+        flex-wrap: wrap;
+        }
+
+    .btn-primario {
+        background: $cor-primaria-blue;
+        color: $cor-branca;
+        border: none;
+        padding: 15px 35px;
+        font-size: 16px;
+        font-weight: 600;
+        border-radius: $border-radius-sm;
+        cursor: pointer;
+        transition: background 0.3s ease;
+
+        &:hover {
+            background: darken($cor-primaria-blue, 10%);
+        }
+    }
+
+    .btn-secondario {
+        background: transparent;
+        color: $cor-primaria-blue;
+        border: 2px solid $cor-primaria-blue;
+        padding: 15px 35px;
+        font-size: 16px;
+        font-weight: 600;
+        border-radius: $border-radius-sm;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+            background: $cor-primaria-blue;
+            color: $cor-branca;
+        }
+    }
+    
+}
+
+/* ========================================
+   SEÇÕES GENÉRICAS
+   ======================================== */
+.titulo-sessao {
+    text-align: center;
+    font-family: $font-primaria;
+    font-size: 45px;
+    font-weight: 700;
+    margin-bottom: $spacing-lg;
+
+    &.texto-gradiente {
+        background: linear-gradient(90deg, $cor-primaria-blue 0%, $cor-primaria-green 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    &.pink {
+        color: $cor-primaria-pink;
+    }
+
+    &.blue {
+        color: #4a8ec2;
+    }
+}
+
+.descricao-sessao {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto $spacing-2xl;
+    font-size: 18px;
+    color: #333333;
+    line-height: 1.8;
+}
+
+/* ========================================
+   SESSÃO 1: IMPORTÂNCIA DOS EXAMES
+   ======================================== */
+.sessao-importancia {
+    background: linear-gradient(180deg, $cor-light-blue 0%, $cor-branca 100%);
+    padding: $spacing-3xl $spacing-xl;
+
+    .cartoes-importancia {
+        display: flex;
+        justify-content: center;
+        gap: $spacing-lg;
+        max-width: $breakpoint-wide;
+        margin: 0 auto;
+        flex-wrap: wrap;
+    }
+
+    .cartao-importancia {
+        background: $cor-branca;
+        border-radius: $border-radius-lg;
+        padding: $spacing-lg $spacing-md;
+        text-align: center;
+        box-shadow: $shadow-md;
+        flex: 1;
+        min-width: 250px;
+        max-width: 350px;
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: translateY(-5px);
+        }
+
+        h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: $spacing-sm;
+            color: $cor-texto-escuro;
+        }
+
+        p {
+            font-size: 16px;
+            color: $cor-texto-claro;
+            line-height: 1.6;
+        }
+    }
+
+    .icone-cartao {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto $spacing-md;
+        border-radius: $border-radius-full;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &.green {
+            background: #d4edda;
+            color: #28a745;
+        }
+
+        &.blue {
+            background: #cfe2f3;
+            color: #2768a3;
+        }
+
+        &.red {
+            background: #f9d5e5;
+            color: $cor-acento-pink;
+        }
+    }
+}
+
+/* ========================================
+   SESSÕES DE PREVENÇÃO
+   ======================================== */
+.sessao-prevencao {
+    padding: $spacing-3xl $spacing-xl;
+
+    &.feminino {
+        background: $cor-light-pink;
+    }
+
+    &.masculino {
+        background: $cor-light-gray;
+    }
+
+    .prevencao-box {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: $spacing-lg;
+        max-width: $breakpoint-wide;
+        margin: 0 auto;
+        margin-top: $spacing-2xl;
+    }
+
+    .prevencao-cartao {
+        background: $cor-branca;
+        border-radius: $border-radius-lg;
+        padding: $spacing-md;
+        width: 250px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: translateY(-8px);
+        }
+
+        .foto-cartao {
+            width: 105px;
+            height: 105px;
+            border-radius: $border-radius-full;
+            object-fit: cover;
+            margin: 0 auto $spacing-md;
+            display: block;
+        }
+
+        h3 {
+            font-size: 20px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: $spacing-md;
+            color: $cor-texto-escuro;
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: $spacing-xs;
+
+            li {
+                font-size: 14px;
+                color: #020202;
+                padding-left: $spacing-md;
+                position: relative;
+
+                &::before {
+                    content: "•";
+                    position: absolute;
+                    left: 0;
+                    color: $cor-texto-escuro;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
+
+/* ========================================
+   SESSÃO 4: ALERTAS IMPORTANTES
+   ======================================== */
+.sessao-alertas {
+    background: $cor-branca;
+    padding: $spacing-3xl $spacing-xl;
+
+    .alertas-box {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: $spacing-lg;
+        max-width: 1000px;
+        margin: 0 auto;
+        margin-top: $spacing-2xl;
+    }
+
+    .alerta-cartao {
+        border-radius: $border-radius-md;
+        padding: $spacing-md $spacing-sm;
+        width: 416px;
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+
+        &.pink {
+            background: #f9d5e5;
+        }
+
+        &.blue {
+            background: #cfe2f3;
+        }
+
+        &.green {
+            background: #d4edda;
+        }
+
+        &.yellow {
+            background: #ffe8c1;
+        }
+
+        .alerta-header {
+            display: flex;
+            align-items: center;
+            gap: $spacing-sm;
+            margin-bottom: $spacing-sm;
+        }
+
+        .alerta-icone {
+            width: 35px;
+            height: 35px;
+            flex-shrink: 0;
+        }
+
+        h3 {
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        p {
+            font-size: 16px;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        &.pink h3,
+        &.pink p {
+            color: #ac3469;
+        }
+
+        &.blue h3,
+        &.blue p {
+            color: #2768a3;
+        }
+
+        &.green h3,
+        &.green p {
+            color: #23492c;
+        }
+
+        &.yellow h3,
+        &.yellow p {
+            color: #966c00;
+        }
+    }
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+.footer {
+    background: $cor-escura;
+    color: $cor-branca;
+    padding: $spacing-2xl $spacing-xl 0;
+
+    .footer-conteudo {
+        max-width: $breakpoint-wide;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        gap: $spacing-2xl;
+        padding-bottom: $spacing-lg;
+        flex-wrap: wrap;
+    }
+
+    .footer-coluna {
+        flex: 1;
+        min-width: 250px;
+
+        .footer-logo {
+            height: 39px;
+            width: auto;
+            margin-bottom: $spacing-md;
+        }
+
+        .footer-tagline {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: $spacing-xs;
+        }
+
+        .footer-descricao {
+            font-size: 16px;
+            color: #fdfdfd;
+        }
+
+        h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: $spacing-md;
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: $spacing-xs;
+
+            li {
+                font-size: 16px;
+                color: #fdfdfd;
+            }
+        }
+    }
+
+    .footer-botao {
+        border-top: 1px solid $cor-texto-mutado;
+        padding: $spacing-md 0;
+        text-align: center;
+
+        p {
+            font-size: 16px;
+            color: $cor-branca;
+        }
+    }
+}
+
+/* ========================================
+   RESPONSIVIDADE
+   ======================================== */
+@media (max-width: $breakpoint-tablet) {
+    .header {
+        .header-nav {
+            flex-direction: column;
+            text-align: center;
+            padding: 0 $spacing-md;
+        }
+
+        .nav-links {
+            flex-direction: column;
+            gap: $spacing-sm;
+        }
+    }
+
+    .hero {
+        padding: $spacing-2xl $spacing-md;
+
+        .hero-content {
+            flex-direction: column;
+            gap: $spacing-lg;
+        }
+
+        .hero-title {
+            font-size: 36px;
+        }
+
+        .hero-circle {
+            width: 300px;
+            height: 300px;
+        }
+    }
+
+    .sessao-importancia {
+        .cartoes-importancia {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .cartao-importancia {
+            width: 100%;
+            max-width: 350px;
+        }
+    }
+
+    .sessao-prevencao {
+        .prevencao-box {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .prevencao-cartao {
+            width: 100%;
+            max-width: 300px;
+        }
+    }
+
+    .sessao-alertas {
+        .alertas-box {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .alerta-cartao {
+            width: 100%;
+            max-width: 416px;
+        }
+    }
+
+    .footer {
+        .footer-conteudo {
+            flex-direction: column;
+            gap: $spacing-lg;
+        }
+    }
+}
+
+@media (max-width: $breakpoint-mobile) {
+    html {
+        font-size: 14px;
+    }
+
+    .hero {
+        padding: $spacing-xl $spacing-md;
+
+        .hero-title {
+            font-size: 28px;
+        }
+
+        .hero-subtitle {
+            font-size: 16px;
+        }
+
+        .hero-circle {
+            width: 250px;
+            height: 250px;
+        }
+    }
+
+    .titulo-sessao {
+        font-size: 32px;
+    }
+
+    .btn-primario,
+    .btn-secondario {
+        padding: 12px 24px;
+        font-size: 14px;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Inter", sans-serif;
+}
